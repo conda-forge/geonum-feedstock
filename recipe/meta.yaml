@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -28,9 +28,13 @@ requirements:
     - srtm.py
 
 test:
+  requires:
+    - pytest
   imports:
     - geonum
     - geonum.test
+  commands:
+    - py.test --pyargs geonum
 
 about:
   home: https://github.com/jgliss/geonum
