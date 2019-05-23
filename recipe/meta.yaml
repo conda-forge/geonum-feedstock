@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 2
+  number: 3
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -34,6 +34,7 @@ test:
     - geonum
     - geonum.test
   commands:
+    - python -c "from mpl_toolkits.basemap import Basemap"
     - py.test --pyargs geonum
 
 about:
