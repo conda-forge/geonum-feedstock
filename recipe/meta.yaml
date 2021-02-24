@@ -1,5 +1,5 @@
 {% set name = "geonum" %}
-{% set version = "1.4.4" %}
+{% set version = "1.4.5" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 466aea5d7c020afe8946bc4becceb3e3eed8855a9cfede562c178a87f2667324
+  sha256: 0ee42117598bfd2ae24bac0bf3807609951fe002454f2cef90a85daebdcc61bb
 
 build:
   noarch: python
@@ -17,12 +17,10 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
-    - python
+    - python >=3.6
     - scipy
-    - basemap
-    - netcdf4
     - latlon23
     - srtm.py
 
@@ -33,7 +31,6 @@ test:
     - geonum
     - geonum.test
   commands:
-    - python -c "from mpl_toolkits.basemap import Basemap"
     - py.test --pyargs geonum
 
 about:
