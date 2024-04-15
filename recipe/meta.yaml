@@ -21,6 +21,7 @@ requirements:
     - setuptools
   run:
     - python >=3.8
+    - numpy
     - scipy
     - matplotlib
     - latlon23
@@ -31,16 +32,15 @@ requirements:
 test:
   requires:
     - pytest
+    - netcdf4
   imports:
-    - setuptools
     - geonum
-    - geonum.test
   commands:
-    - py.test --pyargs geonum
+    - pytest test
 
 about:
   home: https://github.com/jgliss/geonum
-  license: GPL-3.0
+  license:  GPL-3.0-only
   license_family: GPL
   license_file: LICENSE
   summary: Toolbox for 3D geonumerical calculations
