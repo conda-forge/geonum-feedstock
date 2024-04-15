@@ -1,7 +1,8 @@
+{% set name = "geonum" %}
 {% set version = "1.5.0" %}
 
 package:
-  name: geonum
+  name: "{{ name }}"
   version: "{{ version }}"
 
 source:
