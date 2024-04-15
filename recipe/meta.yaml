@@ -1,8 +1,7 @@
-{% set name = "geonum" %}
 {% set version = "1.5.0" %}
 
 package:
-  name: "{{ name|lower }}"
+  name: geonum
   version: "{{ version }}"
 
 source:
@@ -33,10 +32,12 @@ test:
   requires:
     - pytest
     - netcdf4
+  source_files:
+    - test
   imports:
     - geonum
   commands:
-    - pytest test
+    - pytest -Wi test
 
 about:
   home: https://github.com/jgliss/geonum
