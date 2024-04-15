@@ -1,44 +1,48 @@
 {% set name = "geonum" %}
-{% set version = "1.4.5" %}
+{% set version = "1.5.0" %}
 
 package:
-  name: "{{ name|lower }}"
+  name: "{{ name }}"
   version: "{{ version }}"
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0ee42117598bfd2ae24bac0bf3807609951fe002454f2cef90a85daebdcc61bb
+  sha256: d787099f98affea4b67071bd9173ac25ddf968b77522cbb69d4696133d33be87
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
     - setuptools
   run:
-    - python >=3.6
+    - python >=3.8
+    - numpy
     - scipy
+    - matplotlib
     - latlon23
     - srtm.py
+    - cartopy
     - setuptools
 
 test:
   requires:
     - pytest
+    - netcdf4
+  source_files:
+    - test
   imports:
-    - setuptools
     - geonum
-    - geonum.test
   commands:
-    - py.test --pyargs geonum
+    - pytest -Wi test
 
 about:
   home: https://github.com/jgliss/geonum
-  license: GPL-3.0
+  license:  GPL-3.0-only
   license_family: GPL
   license_file: LICENSE
   summary: Toolbox for 3D geonumerical calculations
