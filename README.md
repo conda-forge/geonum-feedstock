@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/geonum-feedstoc
 
 Home: https://github.com/jgliss/geonum
 
-Package license: GPL-3.0
+Package license: GPL-3.0-only
 
 Summary: Toolbox for 3D geonumerical calculations
 
