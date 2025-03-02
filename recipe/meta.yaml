@@ -1,5 +1,5 @@
 {% set name = "geonum" %}
-{% set version = "1.5.0" %}
+{% set version = "1.5.1" %}
 
 package:
   name: "{{ name }}"
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d787099f98affea4b67071bd9173ac25ddf968b77522cbb69d4696133d33be87
+  sha256: 3fb4dcff566d0087433aa681372cbb8cb8c5bf4ff6db448cbf9a665c6f0d77cd
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -43,7 +43,7 @@ test:
 
 about:
   home: https://github.com/jgliss/geonum
-  license:  GPL-3.0-only
+  license: GPL-3.0-only
   license_family: GPL
   license_file: LICENSE
   summary: Toolbox for 3D geonumerical calculations
