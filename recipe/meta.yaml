@@ -23,7 +23,7 @@ requirements:
     - python >={{ python_min }}
     - numpy
     - scipy
-    - matplotlib
+    - matplotlib-base
     - latlon23
     - srtm.py
     - cartopy
