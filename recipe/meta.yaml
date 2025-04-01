@@ -1,5 +1,5 @@
 {% set name = "geonum" %}
-{% set version = "1.5.1" %}
+{% set version = "1.6.0" %}
 
 package:
   name: "{{ name }}"
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3fb4dcff566d0087433aa681372cbb8cb8c5bf4ff6db448cbf9a665c6f0d77cd
+  sha256: 0fa0a557ab5d51b2a6ff4010eccdf043b6a713c739e60baa83db429590063a8d
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
